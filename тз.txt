@@ -1,0 +1,10 @@
+1. Validation in parser
+2. pep-8, order of imports: 1) opensource libs import 
+                            2) custom libs import
+3. Raising errors by using try/except
+4. For comf work its better to make class Event for collecting information and class Stats for preparing information before output
+5. Entrance point - main. Reading file by csv and json lib
+6. Gettind info from dict by key better do by .get, not by square parenthesis
+7. To get top-5 sources it's better to have two counters for each source in by_source dict
+    (to decrease usage of memory)
+8. Make sure about nuber of namespaces
