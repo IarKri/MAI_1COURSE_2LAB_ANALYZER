@@ -1,0 +1,15 @@
+{"timestamp":"2026-10-13T12:00:00","level":"INFO","source":"api","message":"Сервис запущен"}
+{"timestamp":"2026-10-13T12:05:00","level":"ERROR","source":"database","message":"Ошибка подключения к базе"}
+{"timestamp":"2026-10-13T11:55:00","level":"WARNING","source":"api","message":"Высокая задержка ответа"}
+{"timestamp":"2026-10-13T12:10:00","level":"CRITICAL","source":"database","message":"База данных недоступна"}
+{"timestamp":"2026-10-13T12:03:00","level":"DEBUG","source":"worker","message":"Начата обработка задачи"}
+{"timestamp":"2026-10-13T12:15:00","level":"ERROR","source":"api","message":"Ошибка обработки запроса"}
+{"timestamp":"2026-10-13T12:20:00","level":"INFO","source":"worker","message":"Задача обработана"}
+{"timestamp":"2026-10-13T12:25:00","level":"ERROR","source":"database","message":"Тайм-аут запроса"}
+{"timestamp":"2026-10-13T12:30:00","level":"WARNING","source":"auth","message":"Необычная попытка входа"}
+{"timestamp":"2026-10-13T12:35:00","level":"CRITICAL","source":"server","message":"Недостаточно свободной памяти"}
+{"timestamp":"2026-10-13T12:40:00","level":"ERROR","source":"api","message":"Не удалось отправить ответ"}
+{"timestamp":"2026-10-13T12:45:00","level":"INFO","source":"auth","message":"Пользователь вошёл в систему"}
+{"timestamp":"2026-10-13T12:50:00","level":"ERROR","source":"worker","message":"Ошибка выполнения задачи"}
+{"timestamp":"2026-10-13T12:55:00","level":"CRITICAL","source":"database","message":"Повторный отказ базы данных"}
+{"timestamp":"2026-10-13T13:00:00","level":"INFO","source":"server","message":"Проверка состояния завершена"}
