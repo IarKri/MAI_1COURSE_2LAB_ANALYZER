@@ -1,5 +1,4 @@
 from .models import Level
-from datetime import datetime
 
 
 class Analyzer:
@@ -32,12 +31,12 @@ class Analyzer:
         #отбор последнего и первого события
         if self.first_timestamp is None:
             self.first_timestamp = event.timestamp
-        elif event.timestamp < self.first_timestamp:
+        if event.timestamp < self.first_timestamp:
             self.first_timestamp = event.timestamp
 
         if self.last_timestamp is None:
             self.last_timestamp = event.timestamp
-        elif event.timestamp > self.last_timestamp:
+        if event.timestamp > self.last_timestamp:
             self.last_timestamp = event.timestamp
 
     #метод вывода итоговой статистики

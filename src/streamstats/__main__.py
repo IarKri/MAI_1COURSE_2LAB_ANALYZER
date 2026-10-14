@@ -3,21 +3,36 @@ import sys
 
 
 from .analysis import Analyzer
-from .errors import StreamStatsError, InvalidEventError, UnsupportedFormatError, CLIConfigError
+from .errors import (
+    StreamStatsError,
+    InvalidEventError,
+    UnsupportedFormatError,
+    CLIConfigError,
+)
 from .parsers import csv_parser, jsonl_parser
 from .report import report
 
 
 def parser(argv=None):
+    '''
+    Формирует парсер аргументов
+    
+    Args:
+        Argv: Аргументы, подающиеся на вход
+    Returns:
+        argparse.Namespace: объект с указанными полями 
+    '''
     format = argparse.RawTextHelpFormatter
     parser = argparse.ArgumentParser(
         prog="streamstats",
         description=(
-
+            "Files analyzer\n"
+            "Supports analyzing files with format .csv and .jsonl"
         ),
         epilog=(
-            "\n"
-            "\n"
+            "Examples:\n"
+            "python -m streamstats analyze path.csv --format csv\n"
+            "python -m streamstats analyze path.json path.csv --format json csv\n"
         ),
         formatter_class=format
     )
@@ -31,16 +46,10 @@ def parser(argv=None):
     analyzer = subparser.add_parser(
         "analyze",
         description=(
-            "\n"
-            "\n"
+            "Analyzer\n"
+            "Supports analyzing of multiple csv and json files\n"
         ),
-        epilog=(
-            "\n"
-            "\n"
-        ),
-        help=(
-            "\n"
-        ),
+        help="analyzing",
         formatter_class=format
     )
 
@@ -48,25 +57,31 @@ def parser(argv=None):
         "INPUT",
         # принять одно или более значений
         nargs="+",
-        help="files to analyze"
+        help="files to analyze (supporting multiple files)"
     )
 
     analyzer.add_argument(
         "--format",
         dest="file_format",
         nargs='+',
-        help=""
+        help="file format (supproting only .csv and .json files)"
     )
 
     analyzer.add_argument(
         "--output",
         dest="output_file",
-        help=""
+        help="file to import result"
     )
     return parser.parse_args(argv)
 
 
 def main(argv=None):
+    """
+    Запускает работу всей программы
+
+    Args:
+        argv: Аргументы, подающиеся на вход
+    """
     count=-1
     args = parser(argv)
     analyzer = Analyzer()

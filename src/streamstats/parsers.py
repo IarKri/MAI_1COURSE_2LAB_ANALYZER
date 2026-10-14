@@ -3,11 +3,21 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from .models import Event, Level
+
 from .errors import StreamStatsError, InvalidEventError
+from .models import Event, Level
 
 #парсер csv файлов
 def csv_parser(INPUT):
+    '''
+    Посторчно читает csv файл и формирует event для analyzer
+
+    Args:
+        INPUT: Файлы, подающиеся для анализа на вход
+
+    Yields:
+        event: отформатированное событие для analyzer
+    '''
     path=Path(INPUT)
     with open(path, encoding="utf-8", newline="") as file:
         sample=file.readline()
@@ -36,6 +46,15 @@ def csv_parser(INPUT):
 
 #парсер jsonl файлов
 def jsonl_parser(INPUT):
+    '''
+    Посторчно читает jsonl файл и формирует event для analyzer
+
+    Args:
+        INPUT: Файлы, подающиеся для анализа на вход
+
+    Yields:
+        event: отформатированное событие для analyzer
+    '''
     path = Path(INPUT)
     with open(path, encoding="utf-8") as file:
         for line in file:
