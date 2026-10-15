@@ -61,7 +61,7 @@ lab_02/
   README.md
   src/streamstats/
     __init__.py
-    __main__.py
+    __main__.py 
     models.py - описывание моделей событий, считываемых из файлов 
     parsers.py - парсер csv и json
     analysis.py

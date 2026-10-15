@@ -19,6 +19,7 @@ def parser(argv=None):
     
     Args:
         Argv: Аргументы, подающиеся на вход
+        
     Returns:
         argparse.Namespace: объект с указанными полями 
     '''
@@ -33,6 +34,7 @@ def parser(argv=None):
             "Examples:\n"
             "python -m streamstats analyze path.csv --format csv\n"
             "python -m streamstats analyze path.json path.csv --format json csv\n"
+            "python -m streamstats analyze path.json --skip-invalid"
         ),
         formatter_class=format
     )

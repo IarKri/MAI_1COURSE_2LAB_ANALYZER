@@ -4,7 +4,11 @@ from datetime import datetime
 from pathlib import Path
 
 
-from .errors import StreamStatsError, InvalidEventError
+from .errors import (
+    StreamStatsError,
+    InvalidEventError,
+    InvalidDelimiterError,
+)
 from .models import Event, Level
 
 #парсер csv файлов
@@ -23,10 +27,11 @@ def csv_parser(INPUT):
         sample=file.readline()
         file.seek(0)
 
-        separator = csv.Sniffer().sniff(sample,delimiters=",;\t|")
-
-        reader = csv.DictReader(file, dialect=separator)
-
+        try:
+            delimiter = csv.Sniffer().sniff(sample,delimiters=",;\t|")
+            reader = csv.DictReader(file, dialect=delimiter)
+        except csv.Error as error:
+            raise InvalidDelimiterError("Unsupported delimiter") from error
 
     #row будет являться словарем
     #присваеваем значения объекту класса через ключи словаря

@@ -1,3 +1,5 @@
+import logging
+
 from .models import Level
 
 
@@ -11,6 +13,16 @@ class Analyzer:
         self.top_errors_sources = {}
         self.first_timestamp = None
         self.last_timestamp = None
+
+
+
+
+        logger=logging.getLogger(__name__)
+
+
+
+
+        
 
     #метод обработки событий
     def add(self, event):
