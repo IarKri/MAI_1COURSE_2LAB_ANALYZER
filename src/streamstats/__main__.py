@@ -5,9 +5,8 @@ import sys
 from .analysis import Analyzer
 from .errors import (
     StreamStatsError,
-    InvalidEventError,
     UnsupportedFormatError,
-    CLIConfigError,
+    UnmatchedFormatsError,
 )
 from .parsers import csv_parser, jsonl_parser
 from .report import report
@@ -89,6 +88,8 @@ def main(argv=None):
     analyzer = Analyzer()
     if args.command == "analyze":
         for file in args.INPUT:
+            if not file.endswith(".jsonl") and not file.endswith(".csv"):
+                raise UnsupportedFormatError("Unsupported File Format")
             count+=1
             if file.endswith(".jsonl") and args.file_format[count]=="jsonl":
                 for event in jsonl_parser(file):
@@ -99,7 +100,7 @@ def main(argv=None):
                     analyzer.add(event)
 
             else:
-                raise UnsupportedFormatError("File format and --format argument doesn't match")
+                raise UnmatchedFormatsError("File format and --format argument doesn't match")
                 #уточнить правильный ли вывод ошибки
                 
 
@@ -109,4 +110,8 @@ def main(argv=None):
     return report(analyzer.build(), args.output_file)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except StreamStatsError as error:
+        print(f"{type(error).__name__}: {error}", file=sys.stderr)
+        sys.exit(2)

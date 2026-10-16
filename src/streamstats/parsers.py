@@ -5,9 +5,10 @@ from pathlib import Path
 
 
 from .errors import (
-    StreamStatsError,
-    InvalidEventError,
     InvalidDelimiterError,
+    InvalidEventError,
+    InvalidTimestampError,
+    StreamStatsError,
 )
 from .models import Event, Level
 
@@ -63,16 +64,27 @@ def jsonl_parser(INPUT):
     path = Path(INPUT)
     with open(path, encoding="utf-8") as file:
         for line in file:
-
             if line.strip()=="":
                 continue
 
             row = json.loads(line)
-            event = Event(
+
+            try:
+                timestamp = datetime.fromisoformat(row["timestamp"])
+            except ValueError:
+                raise InvalidTimestampError(f"Invalid Timestamp: {row["timestamp"]}")
+
+            try:
+                event = Event(
                 timestamp=datetime.fromisoformat(row["timestamp"]),
                 level=Level(row["level"]),
                 source=row["source"],
                 message=row["message"]
-            )
+                )
+            except ValueError:
+                raise InvalidEventError(f"Invalid Event")
+            except KeyError as error:
+                raise InvalidEventError(f"Absence of {error}")
+        
 
             yield event

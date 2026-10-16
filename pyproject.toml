@@ -17,9 +17,6 @@ dev = [
     "pytest>=7.0"
 ]
 
-[project.scripts]
-my-cli = "my_project.cli:main"
-
 [project.urls]
 Homepage = "https://github.com/IarKri"
 Repository = "https://github.com/IarKri/MAI_1COURSE_2LAB_ANALYZER"

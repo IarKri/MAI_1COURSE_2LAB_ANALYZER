@@ -18,5 +18,3 @@ class InvalidDelimiterError(StreamStatsError):
 
 class UnmatchedFormatsError(StreamStatsError):
     pass
-
-

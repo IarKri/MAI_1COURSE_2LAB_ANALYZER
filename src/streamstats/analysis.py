@@ -1,6 +1,9 @@
+from datetime import datetime
 import logging
 
+from .errors import InvalidTimestampError
 from .models import Level
+
 
 
 class Analyzer:
@@ -27,7 +30,6 @@ class Analyzer:
     #метод обработки событий
     def add(self, event):
         self.total_events += 1
-
 
         #методом level присваевам строку в переменную level и ищем ключ в словаре для увеличения значения
         level = event.level
