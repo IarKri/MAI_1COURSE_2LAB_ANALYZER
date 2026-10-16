@@ -1,7 +1,7 @@
 from datetime import datetime
 import logging
 
-from .errors import InvalidTimestampError
+from .errors import StreamStatsError
 from .models import Level
 
 
@@ -52,6 +52,42 @@ class Analyzer:
             self.last_timestamp = event.timestamp
         if event.timestamp > self.last_timestamp:
             self.last_timestamp = event.timestamp
+
+    def add_skip_invalid(self, event, counter):
+        skipped_lines = 0
+        self.total_events += 1
+
+        level = event.level
+        source = event.source
+        try:
+            self.events_by_level[level] = self.events_by_level.get(level, 0) + 1
+        except Exception as error:
+            print (f"file: {counter+2}, line: {self.total_events}, WARNING: {error}")
+        try:
+            self.events_by_source[source] = self.events_by_level.get(source, 0) + 1
+        except StreamStatsError as error:
+            print (f"file: {counter+2}, line: {self.total_events}, WARNING: {error}")
+
+
+
+        #дописать при необходимости
+
+        if event.level == Level.ERROR or event.level == Level.CRITICAL:
+            self.top_errors_sources[source] = (self.top_errors_sources.get(source, 0) + 1)
+
+        #отбор последнего и первого события
+        if self.first_timestamp is None:
+            self.first_timestamp = event.timestamp
+        if event.timestamp < self.first_timestamp:
+            self.first_timestamp = event.timestamp
+
+        if self.last_timestamp is None:
+            self.last_timestamp = event.timestamp
+        if event.timestamp > self.last_timestamp:
+            self.last_timestamp = event.timestamp
+
+
+
 
     #метод вывода итоговой статистики
     def build(self):

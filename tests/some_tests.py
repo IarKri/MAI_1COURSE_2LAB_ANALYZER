@@ -1,14 +1,10 @@
-from pathlib import Path
-
-
 from streamstats.analysis import Analyzer
-from streamstats.parsers import csv_parser, jsonl_parser
-from streamstats.report import report
-
+from streamstats.parsers import jsonl_parser
+from streamstats.parsers import csv_parser
 
 
 def test_valid_jsonl_parser():
-    events=jsonl_parser("files/test_events.jsonl")
+    events=jsonl_parser("tests_data/test_events.jsonl")
 
     analyzer=Analyzer()
     for event in events:
@@ -46,7 +42,7 @@ def test_valid_jsonl_parser():
     assert actual==expected
 
 def test_csv_parser_comma():
-    events=csv_parser("files/test_events_comma.csv")
+    events=csv_parser("tests_data/test_events_comma.csv")
     analyzer=Analyzer()
     for event in events:
         analyzer.add(event)
@@ -83,7 +79,7 @@ def test_csv_parser_comma():
     assert actual == expected
 
 def test_csv_parser_semicolon():
-    events=csv_parser("files/test_events_semicolon.csv")
+    events=csv_parser("test_data/test_events_semicolon.csv")
     analyzer=Analyzer()
     for event in events:
         analyzer.add(event)

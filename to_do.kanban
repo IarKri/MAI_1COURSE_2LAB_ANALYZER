@@ -5,33 +5,6 @@
       "title": "to do",
       "cards": [
         {
-          "id": "050f75e5-6c5c-46a1-9edc-3c52a47db059",
-          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "validation",
-          "description": "",
-          "labels": [],
-          "checkboxes": [],
-          "comments": []
-        },
-        {
-          "id": "9ee10528-e442-4141-a6f0-b4833efa3124",
-          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "tests",
-          "description": "",
-          "labels": [],
-          "checkboxes": [],
-          "comments": []
-        },
-        {
-          "id": "3aac3474-133a-4b9e-afdc-e3019ec3fa9b",
-          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "errors",
-          "description": "",
-          "labels": [],
-          "checkboxes": [],
-          "comments": []
-        },
-        {
           "id": "120d2dad-598d-4499-92df-d43211281287",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
           "title": "logger --skip-invalid",
@@ -57,18 +30,46 @@
           "labels": [],
           "checkboxes": [],
           "comments": []
+        },
+        {
+          "id": "6bd56534-ce31-4456-b9fd-6eda38195b7d",
+          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
+          "title": "delete tests_events",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
         }
       ]
     },
     {
       "id": "78c682aa-22e0-4d9a-83a2-bf9c23432d8a",
       "title": "in process",
-      "cards": []
+      "cards": [
+        {
+          "id": "9ee10528-e442-4141-a6f0-b4833efa3124",
+          "listId": "78c682aa-22e0-4d9a-83a2-bf9c23432d8a",
+          "title": "tests",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        }
+      ]
     },
     {
       "id": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
       "title": "Done",
       "cards": [
+        {
+          "id": "3aac3474-133a-4b9e-afdc-e3019ec3fa9b",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "errors",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
         {
           "id": "ca52f196-0441-41ae-8006-7d02091e2812",
           "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
@@ -91,6 +92,15 @@
           "id": "fdc329d1-6e27-4c3a-b30b-6e6f9bd0456d",
           "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
           "title": "toml",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "050f75e5-6c5c-46a1-9edc-3c52a47db059",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "validation",
           "description": "",
           "labels": [],
           "checkboxes": [],

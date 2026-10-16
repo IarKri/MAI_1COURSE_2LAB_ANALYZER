@@ -8,7 +8,6 @@ from .errors import (
     InvalidDelimiterError,
     InvalidEventError,
     InvalidTimestampError,
-    StreamStatsError,
 )
 from .models import Event, Level
 
@@ -25,7 +24,11 @@ def csv_parser(INPUT):
     '''
     path=Path(INPUT)
     with open(path, encoding="utf-8", newline="") as file:
+
         sample=file.readline()
+        if not sample:
+            return
+
         file.seek(0)
 
         try:
@@ -37,17 +40,20 @@ def csv_parser(INPUT):
     #row будет являться словарем
     #присваеваем значения объекту класса через ключи словаря
         for row in reader:
+            try:
+                timestamp = datetime.fromisoformat(row["timestamp"])
+            except ValueError:
+                raise InvalidTimestampError(f"Invalid Timestamp: {row["timestamp"]}")
             event = Event(
                 timestamp=datetime.fromisoformat(row["timestamp"]),
                 level=Level(row["level"]),
                 source=row["source"],
                 message=row["message"]
                 )
- #           except (ValueError, TypeError, KeyError) as error:
- #               raise InvalidEventError(f"{error}: content of event is unsupported") from error
 
         #yield позволить анализировать файлы через event построково \
         # ( выбрасывая промежуточное значение)
+
             yield event
 
 #парсер jsonl файлов
