@@ -44,7 +44,8 @@ def test_cli_jsonl_no_output(capsys):
         }
 
 def test_cli_csv_output():
-        
+
+
     main(["analyze", "tests_data/data_for_tests.csv", "--format", "csv", "--output", "test_cli.csv"])
 
     assert json.loads(Path("reports/test_cli.csv").read_text(encoding="utf-8")) == {
@@ -63,6 +64,8 @@ def test_cli_csv_output():
         }
 
 def test_cli_jsonl_output():
+
+
     main(["analyze", "tests_data/data_for_tests.jsonl", "--format", "jsonl", "--output", "test_cli.jsonl"])
 
     assert json.loads(Path("reports/test_cli.jsonl").read_text(encoding="utf-8")) == {

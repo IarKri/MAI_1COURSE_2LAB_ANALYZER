@@ -11,7 +11,7 @@ def test_jsonl_parser():
     file = Path("tests_data/data_for_tests.jsonl")
 
     #делаем list, потому что через for event in csv_parser(file) потребуется .add (а тест только для парсера)
-    event = list(jsonl_parser(file))
+    event = list(jsonl_parser(file, None, 0))
 
     assert len(event) == 1
     assert event[0].level == Level.INFO
@@ -26,7 +26,7 @@ def test_csv_parser():
         encoding = "utf-8"
     )
 
-    event = list(csv_parser(file))
+    event = list(csv_parser(file, None, 0))
 
     assert len(event) == 1
     assert event[0].level == Level.INFO

@@ -98,39 +98,24 @@ def main(argv=None):
     args = parser(argv)
     analyzer = Analyzer()
     if args.command == "analyze":
-        if args.skip_invalid:
-            for file in args.INPUT:
-                if not file.endswith(".jsonl") and not file.endswith(".csv"):
-                    raise UnsupportedFormatError("Unsupported File Format")
-                counter+=1
-                if file.endswith(".jsonl") and args.file_format[counter]=="jsonl":
-                    for event in jsonl_parser(file):
-                        analyzer.add_skip_invalid(event, counter)
+        counter+=1
+        for file in args.INPUT:
+            if not file.endswith(".jsonl") and not file.endswith(".csv"):
+                raise UnsupportedFormatError("Unsupported File Format")
+            
+            if file.endswith(".jsonl") and args.file_format[counter]=="jsonl":
+                for event in jsonl_parser(file, counter+1, args.skip_invalid):
+                    analyzer.add(event)
 
-                elif file.endswith(".csv") and args.file_format[counter]=="csv":
-                    for event in csv_parser(file):
-                        analyzer.add_skip_invalid(event, counter)
+            elif file.endswith(".csv") and args.file_format[counter]=="csv":
+                for event in csv_parser(file, counter+1, args.skip_invalid):
+                    analyzer.add(event)
 
-                else:
-                    raise UnmatchedFormatsError("File format and --format argument doesn't match")
-                    #проверить правильный ли вывод ошибки
+            else:
+                raise UnmatchedFormatsError("File format and --format argument doesn't match")
+                #проверить правильный ли вывод ошибки
 
-        else:
-            for file in args.INPUT:
-                if not file.endswith(".jsonl") and not file.endswith(".csv"):
-                    raise UnsupportedFormatError("Unsupported File Format")
-                counter+=1
-                if file.endswith(".jsonl") and args.file_format[counter]=="jsonl":
-                    for event in jsonl_parser(file):
-                        analyzer.add(event)
-
-                elif file.endswith(".csv") and args.file_format[counter]=="csv":
-                    for event in csv_parser(file):
-                        analyzer.add(event)
-
-                else:
-                    raise UnmatchedFormatsError("File format and --format argument doesn't match")
-                    #проверить правильный ли вывод ошибки            
+         
 
     return report(analyzer.build(), args.output_file)
 

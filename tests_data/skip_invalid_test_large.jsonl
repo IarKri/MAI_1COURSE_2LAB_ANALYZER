@@ -1,0 +1,127 @@
+{"timestamp": "2026-10-13T09:01:00", "level": "INFO", "source": "worker", "message": "Test event 1"}
+{"timestamp": "2026-10-13T09:02:00", "level": "WARNING", "source": "database", "message": "Test event 2"}
+{"timestamp": "2026-10-13T09:03:00", "level": "ERROR", "source": "auth", "message": "Test event 3"}
+{"timestamp": "2026-10-13T09:04:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 4"}
+{"timestamp": "2026-10-13T09:05:00", "level": "DEBUG", "source": "api", "message": "Test event 5"}
+{"timestamp": "2026-10-13T09:06:00", "level": "INFO", "source": "worker", "message": "Test event 6"}
+{"timestamp": "НЕ_ДАТА", "level": "WARNING", "source": "database", "message": "Test event 7"}
+{"timestamp": "2026-10-13T09:08:00", "level": "ERROR", "source": "auth", "message": "Test event 8"}
+{"timestamp": "2026-10-13T09:09:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 9"}
+{"timestamp": "2026-10-13T09:10:00", "level": "DEBUG", "source": "api", "message": "Test event 10"}
+{"timestamp": "2026-10-13T09:11:00", "level": "INFO", "source": "worker", "message": "Test event 11"}
+{"timestamp": "2026-10-13T09:12:00", "level": "WARNING", "source": "database", "message": "Test event 12"}
+{"timestamp": "2026-10-13T09:13:00", "level": "TRACE", "source": "auth", "message": "Test event 13"}
+{"timestamp": "2026-10-13T09:14:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 14"}
+{"timestamp": "2026-10-13T09:15:00", "level": "DEBUG", "source": "api", "message": "Test event 15"}
+{это не JSON}
+{"timestamp": "2026-10-13T09:16:00", "level": "INFO", "source": "worker", "message": "Test event 16"}
+{"timestamp": "2026-10-13T09:17:00", "level": "WARNING", "source": "database", "message": "Test event 17"}
+{"timestamp": "2026-10-13T09:18:00", "level": "ERROR", "source": "auth", "message": "Test event 18"}
+{"timestamp": "2026-10-13T09:19:00", "level": "CRITICAL", "message": "Test event 19"}
+{"timestamp": "2026-10-13T09:20:00", "level": "DEBUG", "source": "api", "message": "Test event 20"}
+{"timestamp": "2026-10-13T09:21:00", "level": "INFO", "source": "worker", "message": "Test event 21"}
+{"timestamp": "2026-10-13T09:22:00", "level": "WARNING", "source": "database", "message": "Test event 22"}
+{"timestamp": "2026-10-13T09:23:00", "level": "ERROR", "source": "auth"}
+{"timestamp": "2026-10-13T09:24:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 24"}
+{"timestamp": "2026-10-13T09:25:00", "level": "DEBUG", "source": "api", "message": "Test event 25"}
+{"timestamp": "2026-10-13T09:26:00", "level": "INFO", "source": "worker", "message": "Test event 26"}
+{"timestamp": "2026-10-13T09:27:00", "level": "WARNING", "source": "database", "message": "Test event 27"}
+{"timestamp": "2026-10-13T09:28:00", "level": "ERROR", "source": "auth", "message": "Test event 28"}
+{"timestamp": "НЕ_ДАТА", "level": "CRITICAL", "source": "scheduler", "message": "Test event 29"}
+{"timestamp": "2026-10-13T09:30:00", "level": "DEBUG", "source": "api", "message": "Test event 30"}
+{"level": "INFO", "source": "worker", "message": "Test event 31"}
+{"timestamp": "2026-10-13T09:32:00", "level": "WARNING", "source": "database", "message": "Test event 32"}
+{"timestamp": "2026-10-13T09:33:00", "level": "ERROR", "source": "auth", "message": "Test event 33"}
+{"timestamp": "2026-10-13T09:34:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 34"}
+{"timestamp": "2026-10-13T09:35:00", "level": "DEBUG", "source": "api", "message": "Test event 35"}
+{"timestamp": "2026-10-13T12:00:00", "level": INFO, "source": "api", "message": "missing quotes"}
+{"timestamp": "2026-10-13T09:36:00", "level": "INFO", "source": "worker", "message": "Test event 36"}
+{"timestamp": "2026-10-13T09:37:00", "level": "WARNING", "source": "database", "message": "Test event 37"}
+{"timestamp": "2026-10-13T09:38:00", "level": "ERROR", "source": "", "message": "Test event 38"}
+{"timestamp": "2026-10-13T09:39:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 39"}
+{"timestamp": "2026-10-13T09:40:00", "level": "DEBUG", "source": "api", "message": "Test event 40"}
+{"timestamp": "2026-10-13T09:41:00", "level": "INFO", "source": "worker", "message": "Test event 41"}
+{"timestamp": "2026-10-13T09:42:00", "level": "WARNING", "source": "database", "message": "Test event 42"}
+{"timestamp": "2026-10-13T09:43:00", "level": "ERROR", "source": "auth", "message": "Test event 43"}
+{"timestamp": "2026-10-13T09:44:00", "level": "TRACE", "source": "scheduler", "message": "Test event 44"}
+{"timestamp": "2026-10-13T09:45:00", "level": "DEBUG", "source": "api", "message": "Test event 45"}
+{"timestamp": "2026-10-13T09:46:00", "level": "INFO", "source": "worker", "message": "Test event 46"}
+{"timestamp": "2026-10-13T09:47:00", "level": "WARNING", "source": "database", "message": "Test event 47"}
+{"timestamp": "2026-10-13T09:48:00", "level": "ERROR", "source": "auth", "message": "Test event 48"}
+{это не JSON}
+{"timestamp": "2026-10-13T09:49:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 49"}
+{"timestamp": "2026-10-13T09:50:00", "level": "DEBUG", "source": "api", "message": "Test event 50"}
+{"timestamp": "2026-10-13T09:51:00", "level": "INFO", "source": "worker", "message": "Test event 51"}
+{"timestamp": "2026-10-13T09:52:00", "level": "WARNING", "source": "database", "message": "Test event 52"}
+{"timestamp": "2026-10-13T09:53:00", "level": "ERROR", "message": "Test event 53"}
+{"timestamp": "2026-10-13T09:54:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 54"}
+{"timestamp": "2026-10-13T09:55:00", "level": "DEBUG", "source": "api", "message": "Test event 55"}
+{"timestamp": "2026-10-13T09:56:00", "level": "INFO", "source": "worker", "message": "Test event 56"}
+{"timestamp": "2026-10-13T09:57:00", "level": "WARNING", "source": "database", "message": "Test event 57"}
+{"timestamp": "2026-10-13T09:58:00", "level": "ERROR", "source": "auth", "message": "Test event 58"}
+{"timestamp": "2026-10-13T09:59:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 59"}
+{"timestamp": "2026-10-13T10:00:00", "level": "DEBUG", "source": "api", "message": "Test event 60"}
+{"timestamp": "НЕ_ДАТА", "level": "INFO", "source": "worker", "message": "Test event 61"}
+{"timestamp": "2026-10-13T10:02:00", "level": "WARNING", "source": "database", "message": "Test event 62"}
+{"timestamp": "2026-10-13T10:03:00", "level": "ERROR", "source": "auth", "message": "Test event 63"}
+{"timestamp": "2026-10-13T10:04:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 64"}
+{"timestamp": "2026-10-13T10:05:00", "level": "DEBUG", "source": "api", "message": "Test event 65"}
+{"timestamp": "2026-10-13T10:06:00", "level": "INFO", "source": "worker", "message": "Test event 66"}
+{"timestamp": "2026-10-13T10:07:00", "level": "WARNING", "source": "database"}
+{"timestamp": "2026-10-13T10:08:00", "level": "ERROR", "source": "auth", "message": "Test event 68"}
+{"timestamp": "2026-10-13T10:09:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 69"}
+{"timestamp": "2026-10-13T10:10:00", "level": "DEBUG", "source": "api", "message": "Test event 70"}
+{"timestamp": "2026-10-13T12:00:00", "level": "ERROR", "source": "api", "message": "unfinished"
+{"timestamp": "2026-10-13T10:11:00", "level": "INFO", "source": "worker", "message": "Test event 71"}
+{"timestamp": "2026-10-13T10:12:00", "level": "WARNING", "source": "database", "message": "Test event 72"}
+{"timestamp": "2026-10-13T10:13:00", "level": "ERROR", "source": "auth", "message": "Test event 73"}
+{"timestamp": "2026-10-13T10:14:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 74"}
+{"timestamp": "2026-10-13T10:15:00", "level": "DEBUG", "source": "api", "message": "Test event 75"}
+{"level": "INFO", "source": "worker", "message": "Test event 76"}
+{"timestamp": "2026-10-13T10:17:00", "level": "WARNING", "source": "database", "message": "Test event 77"}
+{"timestamp": "2026-10-13T10:18:00", "level": "ERROR", "source": "auth", "message": "Test event 78"}
+{"timestamp": "2026-10-13T10:19:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 79"}
+{"timestamp": "2026-10-13T10:20:00", "level": "DEBUG", "source": "api", "message": "Test event 80"}
+{"timestamp": "2026-10-13T10:21:00", "level": "INFO", "source": "worker", "message": "Test event 81"}
+{"timestamp": "2026-10-13T10:22:00", "level": "TRACE", "source": "database", "message": "Test event 82"}
+{"timestamp": "2026-10-13T10:23:00", "level": "ERROR", "source": "auth", "message": "Test event 83"}
+{"timestamp": "2026-10-13T10:24:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 84"}
+{"timestamp": "2026-10-13T10:25:00", "level": "DEBUG", "source": "api", "message": "Test event 85"}
+{"timestamp": "2026-10-13T10:26:00", "level": "INFO", "source": "worker", "message": "Test event 86"}
+{"timestamp": "2026-10-13T10:27:00", "level": "WARNING", "source": "database", "message": "Test event 87"}
+{"timestamp": "2026-10-13T10:28:00", "level": "ERROR", "source": "", "message": "Test event 88"}
+{"timestamp": "2026-10-13T10:29:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 89"}
+{"timestamp": "2026-10-13T10:30:00", "level": "DEBUG", "source": "api", "message": "Test event 90"}
+{это не JSON}
+{"timestamp": "2026-10-13T10:31:00", "level": "INFO", "source": "worker", "message": "Test event 91"}
+{"timestamp": "2026-10-13T10:32:00", "level": "WARNING", "source": "database", "message": "Test event 92"}
+{"timestamp": "2026-10-13T10:33:00", "level": "ERROR", "source": "auth", "message": "Test event 93"}
+{"timestamp": "2026-10-13T10:34:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 94"}
+{"timestamp": "2026-10-13T10:35:00", "level": "DEBUG", "source": "api", "message": "Test event 95"}
+{"timestamp": "2026-10-13T10:36:00", "level": "INFO", "source": "worker", "message": "Test event 96"}
+{"timestamp": "НЕ_ДАТА", "level": "WARNING", "source": "database", "message": "Test event 97"}
+{"timestamp": "2026-10-13T10:38:00", "level": "ERROR", "source": "auth", "message": "Test event 98"}
+{"timestamp": "2026-10-13T10:39:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 99"}
+{"timestamp": "2026-10-13T10:40:00", "level": "DEBUG", "source": "api", "message": "Test event 100"}
+{"timestamp": "2026-10-13T10:41:00", "level": "INFO", "message": "Test event 101"}
+{"timestamp": "2026-10-13T10:42:00", "level": "WARNING", "source": "database", "message": "Test event 102"}
+{"timestamp": "2026-10-13T10:43:00", "level": "ERROR", "source": "auth", "message": "Test event 103"}
+{"timestamp": "2026-10-13T12:00:00", "level": INFO, "source": "api", "message": "missing quotes"}
+{"timestamp": "2026-10-13T10:44:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 104"}
+{"timestamp": "2026-10-13T10:45:00", "level": "DEBUG", "source": "api", "message": "Test event 105"}
+{"timestamp": "2026-10-13T10:46:00", "level": "INFO", "source": "worker", "message": "Test event 106"}
+{"timestamp": "2026-10-13T10:47:00", "level": "WARNING", "source": "database", "message": "Test event 107"}
+{"timestamp": "2026-10-13T10:48:00", "level": "ERROR", "source": "auth", "message": "Test event 108"}
+{"timestamp": "2026-10-13T10:49:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 109"}
+{"timestamp": "2026-10-13T10:50:00", "level": "DEBUG", "source": "api"}
+{"timestamp": "2026-10-13T10:51:00", "level": "INFO", "source": "worker", "message": "Test event 111"}
+{"timestamp": "2026-10-13T10:52:00", "level": "WARNING", "source": "database", "message": "Test event 112"}
+{"timestamp": "2026-10-13T10:53:00", "level": "ERROR", "source": "auth", "message": "Test event 113"}
+{"timestamp": "2026-10-13T10:54:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 114"}
+{"timestamp": "2026-10-13T10:55:00", "level": "DEBUG", "source": "api", "message": "Test event 115"}
+{это не JSON}
+{"timestamp": "2026-10-13T10:56:00", "level": "INFO", "source": "worker", "message": "Test event 116"}
+{"timestamp": "2026-10-13T10:57:00", "level": "WARNING", "source": "database", "message": "Test event 117"}
+{"timestamp": "2026-10-13T10:58:00", "level": "ERROR", "source": "auth", "message": "Test event 118"}
+{"timestamp": "2026-10-13T10:59:00", "level": "CRITICAL", "source": "scheduler", "message": "Test event 119"}
+{"timestamp": "2026-10-13T11:00:00", "level": "DEBUG", "source": "api", "message": "Test event 120"}
