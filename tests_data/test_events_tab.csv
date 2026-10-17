@@ -1,8 +1,0 @@
-timestamp	level	source	message
-2026-10-14T10:00:00	INFO	auth	Пользователь вошёл
-2026-10-14T10:01:30	WARNING	auth	Много неудачных попыток
-2026-10-14T10:02:00	ERROR	payments	Платёж отклонён
-2026-10-14T10:03:45	ERROR	payments	Ошибка шлюза
-2026-10-14T10:04:10	CRITICAL	payments	Сервис платежей недоступен
-2026-10-14T10:05:00	DEBUG	scheduler	Проверка расписания
-2026-10-14T10:06:20	INFO	scheduler	Задача запланирована

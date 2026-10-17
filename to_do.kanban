@@ -5,15 +5,6 @@
       "title": "to do",
       "cards": [
         {
-          "id": "120d2dad-598d-4499-92df-d43211281287",
-          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "logger --skip-invalid",
-          "description": "",
-          "labels": [],
-          "checkboxes": [],
-          "comments": []
-        },
-        {
           "id": "4944ce20-3369-4176-b717-eb21cc3a6a53",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
           "title": "README review",
@@ -32,18 +23,18 @@
           "comments": []
         },
         {
-          "id": "6bd56534-ce31-4456-b9fd-6eda38195b7d",
+          "id": "80bf2fe4-c66a-43f6-b4d5-0970302bc320",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "delete tests_events",
+          "title": "error too much formats",
           "description": "",
           "labels": [],
           "checkboxes": [],
           "comments": []
         },
         {
-          "id": "80bf2fe4-c66a-43f6-b4d5-0970302bc320",
+          "id": "c5df7949-9a6c-4c18-87c0-68c658061f9a",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "error too much formats",
+          "title": "constants.py",
           "description": "",
           "labels": [],
           "checkboxes": [],
@@ -70,6 +61,24 @@
       "id": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
       "title": "Done",
       "cards": [
+        {
+          "id": "6bd56534-ce31-4456-b9fd-6eda38195b7d",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "delete tests_events",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "120d2dad-598d-4499-92df-d43211281287",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "logger --skip-invalid",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
         {
           "id": "3aac3474-133a-4b9e-afdc-e3019ec3fa9b",
           "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",

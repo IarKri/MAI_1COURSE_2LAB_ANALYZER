@@ -1,9 +1,0 @@
-{"timestamp":"2026-10-13T11:55:00","level":"INFO","source":"api","message":"Сервис запущен"}
-{"timestamp":"НЕ_ДАТА","level":"ERROR","source":"api","message":"Неправильная дата"}
-{"timestamp":"2026-10-13T11:56:00","level":"UNKNOWN","source":"worker","message":"Неизвестный уровень"}
-{"timestamp":"2026-10-13T11:57:00","level":"WARNING","message":"Отсутствует source"}
-{"timestamp":"2026-10-13T11:58:00","level":"ERROR","source":"database","message":"База данных недоступна"}
-{"timestamp":"2026-10-13T11:59:00","level":"INFO","source":"worker"}
-{"timestamp":"2026-10-13T12:00:00","level":"CRITICAL","source":"api","message":"Критическая ошибка"}
-{это не JSON}
-{"timestamp":"2026-10-13T12:01:00","level":"INFO","source":"worker","message":"Обработка завершена"}

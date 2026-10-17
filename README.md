@@ -50,20 +50,25 @@
 
 ```bash
 python -m streamstats analyze INPUT --format csv|jsonl
-python -m streamstats analyze INPUT --format csv|jsonl Report.json
+python -m streamstats analyze INPUT --format csv|jsonl --output Report.json
 python -m streamstats analyze INPUT --format csv|jsonl --skip-invalid
 ```
+- `analyze` - анализирует поступившие на вход файлы csv и jsonl
+- `--format` - указывает на формат анализируемого файла
+- `--output` - создасется кастомный файл в папке Reports, в который будет записан отчет
+- `--skip-invalid` - при наличии этой команды, строки с ошибками будут записываться в лог
+                     Программа при этом проанализирует файлы до конца, не включив ошибочные события в подсчет
 
-## Ошибки анализатора - переписать классы ошибок на названия
+## Ошибки анализатора 
 
-- `StreamStatsError` - родительский класс ошибок
-- `UnsupportedFormatError` - 
-- `InvalidEventError` -
-- `InvalidTimestampError` -
-- `CLIConfigError` -
-- `InvalidDelimiterError` -
-- `UnmatchedFormatError` -
-- `` -
+- `StreamStatsError` - родительский класс ошибок (используется для общего отлавливания оишбок)
+- `UnsupportedFormatError` - Тип файла не поддерживается анализатором
+- `InvalidEventError` - Ошибка анализируемого события
+- `InvalidTimestampError` - Ошибка записи timestamp
+- `CLIConfigError` - 
+- `InvalidDelimiterError` - Использование недопустимого разделителя
+- `UnmatchedFormatError` - Несовместимость файла и соотвественного ему аргумента из --format
+
 
 ## Структура проекта
 
@@ -82,7 +87,17 @@ lab_02_analyzer\
             parsers.py
             report.py
     tests\
-
+        several_files_test.py
+        test_cli.py
+        test_empty_files.py
+        unit_test.py
+    tests_data\
+        data_for_tests.csv
+        data_for_tests.jsonl
+        empty_file_for_tests.csv
+        empty_file_for_tests.jsonl
+        skip_invalid_test_large.csv
+        skip_invalid_test_large.jsonl
 
 
 ## Установка и создание виртуального окружения
