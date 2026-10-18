@@ -1,14 +1,18 @@
 import pytest
 from pathlib import Path
+import json
 
 from streamstats.errors import InvalidEventError, InvalidTimestampError
 from streamstats.models import Level
 from streamstats.parsers import csv_parser, jsonl_parser
 
 
-def test_jsonl_parser_valid():
-    file = Path("tests_valid_data/data_for_valid_tests.jsonl")
+def test_jsonl_parser_valid(tmp_path):
+    file = Path(tmp_path/"data_for_valid_tests.jsonl")
 
+    file.write_text(json.dumps({"timestamp":"2026-10-13T12:00:00","level":"INFO","source":"api","message":"Сервис запущен"},
+        ensure_ascii=False), encoding = "utf-8")
+    
     #делаем list, потому что через for event in csv_parser(file) потребуется .add (а тест только для парсера)
     event = list(jsonl_parser(file, None, 0))
 
@@ -17,9 +21,15 @@ def test_jsonl_parser_valid():
     assert event[0].source == "api"
     assert event[0].message == "Сервис запущен"
 
-def test_csv_parser_valid():
-    file = Path("tests_valid_data/data_for_valid_tests.csv")
+def test_csv_parser_valid(tmp_path):
+    file = Path(tmp_path/"data_for_valid_tests.csv")
 
+    file.write_text(
+        "timestamp,level,source,message\n"
+        "2026-10-13T11:55:00,INFO,api,Запуск API\n",
+        encoding="utf-8"
+        )
+    
     event = list(csv_parser(file, None, 0))
 
     assert len(event) == 1
@@ -27,50 +37,86 @@ def test_csv_parser_valid():
     assert event[0].source == "api"
     assert event[0].message== "Запуск API"
 
-def test_jsonl_pasrer_invalid_level():
-    file = Path("tests_invalid_data/data_for_invalid_level_tests.jsonl")
+def test_jsonl_pasrer_invalid_level(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_level_tests.jsonl")
+
+    file.write_text(json.dumps({"timestamp":"2026-10-13T12:00:00","level":"IMFO","source":"api","message":"Сервис запущен"}, 
+        ensure_ascii=False), encoding = "utf-8")
 
     with pytest.raises(InvalidEventError):
         list(jsonl_parser(file, None, 0))
 
-def test_jsonl_parser_invalid_source():
-    file = Path("tests_invalid_data/data_for_invalid_source_tests.jsonl")
+def test_jsonl_parser_invalid_source(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_source_tests.jsonl")
+
+    file.write_text(json.dumps({"timestamp":"2026-10-13T12:00:00","level":"INFO","source":"","message": "Сервис запущен"},
+        ensure_ascii=False), encoding="utf-8")
 
     with pytest.raises(InvalidEventError):
         list(jsonl_parser(file, None, 0))
 
-def test_jsonl_parser_invalid_timestamp():
-    file = Path("tests_invalid_data/data_for_invalid_timestamp_tests.jsonl")
+def test_jsonl_parser_invalid_timestamp(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_timestamp_tests.jsonl")
+
+    file.write_text(json.dumps({"timestamp":"не время","level":"INFO","source":"","message": "Сервис запущен"},
+        ensure_ascii=False), encoding="utf-8")
 
     with pytest.raises(InvalidTimestampError):
         list(jsonl_parser(file, None, 0))
 
-def test_jsonl_parser_invalid_message():
-    file = Path("tests_invalid_data/data_for_invalid_message_tests.jsonl")
+def test_jsonl_parser_invalid_message(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_message_tests.jsonl")
+
+    file.write_text(json.dumps({"timestamp":"2026-10-13T12:00:00","level":"INFO","source":"","message": ""},
+        ensure_ascii=False), encoding="utf-8")
 
     with pytest.raises(InvalidEventError):
         list(jsonl_parser(file, None, 0))
 
-def test_csv_pasrer_invalid_level():
-    file = Path("tests_invalid_data/data_for_invalid_level_tests.csv")
+def test_csv_pasrer_invalid_level(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_level_tests.csv")
+
+    file.write_text(
+        "timestamp,level,source,message\n"
+        "2026-10-13T11:55:00,IMFO,api,Запуск API\n",
+        encoding ="utf -8"
+    )
 
     with pytest.raises(InvalidEventError):
         list(csv_parser(file, None, 0))
 
-def test_csv_parser_invalid_source():
-    file = Path("tests_invalid_data/data_for_invalid_source_tests.csv")
+def test_csv_parser_invalid_source(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_source_tests.csv")
+    
+    file.write_text(
+        "timestamp,level,source,message\n"
+        "2026-10-13T11:55:00,INFO,,Запуск API\n",
+        encoding ="utf -8"
+    )
 
     with pytest.raises(InvalidEventError):
         list(csv_parser(file, None, 0))
 
-def test_csv_parser_invalid_timestamp():
-    file = Path("tests_invalid_data/data_for_invalid_timestamp_tests.csv")
+def test_csv_parser_invalid_timestamp(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_timestamp_tests.csv")
+    
+    file.write_text(
+        "timestamp,level,source,message\n"
+        "234,INFO,api,Запуск API\n",
+        encoding ="utf -8"
+    )
 
     with pytest.raises(InvalidTimestampError):
         list(csv_parser(file, None, 0))
 
-def test_csv_parser_invalid_message():
-    file = Path("tests_invalid_data/data_for_invalid_message_tests.csv")
+def test_csv_parser_invalid_message(tmp_path):
+    file = Path(tmp_path/"data_for_invalid_message_tests.csv")
+    
+    file.write_text(
+        "timestamp,level,source,message\n"
+        "2026-10-13T11:55:00,INFO,api,\n",
+        encoding ="utf -8"
+    )
 
     with pytest.raises(InvalidEventError):
         list(csv_parser(file, None, 0))

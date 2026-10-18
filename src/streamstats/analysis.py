@@ -20,7 +20,6 @@ class Analyzer:
 
         last_timestamp: время самого позднего события
     '''
-    #метод для инициализации содержимого
     def __init__(self):
         '''
         Инициализация атрибутов
@@ -32,7 +31,7 @@ class Analyzer:
         self.first_timestamp = None
         self.last_timestamp = None
 
-    #метод обработки событий
+
     def add(self, event):
         '''
         Функция накопления статистики
@@ -42,7 +41,7 @@ class Analyzer:
         '''
         self.total_events += 1
 
-    #методом level присваевам строку в переменную level и ищем ключ в словаре для value+=1
+        #методом level присваевам строку в переменную level и ищем ключ в словаре для value+=1
         level = event.level
         self.events_by_level[level] = self.events_by_level.get(level, 0) + 1
 
@@ -64,7 +63,7 @@ class Analyzer:
         if event.timestamp > self.last_timestamp:
             self.last_timestamp = event.timestamp
 
-    #метод вывода итоговой статистики
+
     def build(self):
         '''
         Функция получения статистики
@@ -76,7 +75,7 @@ class Analyzer:
         top_error_sources = sorted(
             self.events_by_source.items(),
             key=lambda item: item[1],
-            reverse=True)[:5]               #удобно менять количество вывода
+            reverse=True)[:5]
 
         top_error_sources = dict(top_error_sources)
 

@@ -65,7 +65,7 @@ python -m streamstats analyze INPUT --format csv|jsonl --skip-invalid
 - `UnsupportedFormatError` - Тип файла не поддерживается анализатором
 - `InvalidEventError` - Ошибка анализируемого события
 - `InvalidTimestampError` - Ошибка записи timestamp
-- `CLIConfigError` - 
+- `CLIConfigError` - Ошибка записи аргументов командной строки
 - `InvalidDelimiterError` - Использование недопустимого разделителя
 - `UnmatchedFormatError` - Несовместимость файла и соотвественного ему аргумента из --format
 
@@ -73,15 +73,13 @@ python -m streamstats analyze INPUT --format csv|jsonl --skip-invalid
 ## Структура проекта
 
 lab_02_analyzer\
-    files\
-
     reports\
-
     src\
         streamstats\
             __init__.py
             __main__.py
             analysis.py
+            constants.py
             errors.py
             models.py
             parsers.py
@@ -91,7 +89,16 @@ lab_02_analyzer\
         test_cli.py
         test_empty_files.py
         unit_test.py
-
+    tests_invalid_data\
+        data_for_parser_skip_invalid.csv
+        data_for_parser_skip_invalid.jsonl
+        skip_invalid_test_large.csv
+        skip_invalid_test_large.jsonl
+    tests_valid_data\
+        data_for_unicode-test.csv
+        data_for_unicode-test.jsonl
+    pyproject.toml
+    README.md
 
 
 ## Установка и создание виртуального окружения

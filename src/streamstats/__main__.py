@@ -2,16 +2,14 @@ import argparse
 import sys
 
 
-from .models import CustomArgumentParser
-
-
 from .analysis import Analyzer
 from .errors import (
     CLIConfigError,
     StreamStatsError,
     UnsupportedFormatError,
     UnmatchedFormatsError,
-)
+    )
+from .models import CustomArgumentParser
 from .parsers import csv_parser, jsonl_parser
 from .report import report
 
@@ -119,13 +117,12 @@ def main(argv=None):
             elif file.endswith(".csv") and args.file_format[counter]=="csv":
                 for event in csv_parser(file, counter+1, args.skip_invalid):
                     analyzer.add(event)
+
             elif len(args.INPUT) < len(args.file_format):
                 raise UnmatchedFormatsError("Number of --format arguments are bigger than number of files")
+            
             else:
                 raise UnmatchedFormatsError("File format and --format argument doesn't match")
-                #проверить правильный ли вывод ошибки
-
-         
 
     return report(analyzer.build(), args.output_file)
 
@@ -136,4 +133,5 @@ if __name__ == "__main__":
         print(f"{type(error).__name__}: {error}", file=sys.stderr)
         sys.exit(2)
     except Exception as error:
-        print
+        print(f"Unknown error: {error}", file = sys.stderr)
+        sys.exit(2)

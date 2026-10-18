@@ -4,14 +4,18 @@ from pathlib import Path
 from streamstats.parsers import csv_parser, jsonl_parser
 
 
-def test_empty_jsonl_file():
+def test_empty_jsonl_file(tmp_path):
 
-    file=Path("tests_valid_data/empty_file_for_test.jsonl")
-    for event in jsonl_parser(file, None, 0):
+    file=Path(tmp_path/"test_empty_file.jsonl")
+
+    file.touch()
+    for event in list(jsonl_parser(file, None, 0)):
         assert event == []
 
-def test_empty_csv_file():
+def test_empty_csv_file(tmp_path):
 
-    file=Path("tests_valid_data/empty_file_for_test.csv")
-    for event in csv_parser(file, None, 0):
+    file=Path(tmp_path/"test_empty_file.csv")
+
+    file.touch()
+    for event in list(csv_parser(file, None, 0)):
         assert event == []

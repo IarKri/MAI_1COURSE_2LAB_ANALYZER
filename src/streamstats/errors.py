@@ -4,6 +4,7 @@ class StreamStatsError(Exception):
     '''
     pass
 
+
 class UnsupportedFormatError(StreamStatsError):
     """
     Класс ошибки неподдерживаемого формата файла
@@ -11,6 +12,7 @@ class UnsupportedFormatError(StreamStatsError):
     Наследуется от SreamStatsError
     """
     pass
+
 
 class InvalidEventError(StreamStatsError):
     '''
@@ -21,6 +23,7 @@ class InvalidEventError(StreamStatsError):
     '''
     pass
 
+
 class InvalidTimestampError(StreamStatsError):
     '''
     Класс ошибки неверного timestamp
@@ -28,6 +31,7 @@ class InvalidTimestampError(StreamStatsError):
     Наследуется от StreamStatsError
     '''
     pass
+
 
 class CLIConfigError(StreamStatsError):
     '''
@@ -38,6 +42,7 @@ class CLIConfigError(StreamStatsError):
     '''
     pass
 
+
 class InvalidDelimiterError(StreamStatsError):
     '''
     Класс ошибки неверного раздлителя
@@ -46,6 +51,7 @@ class InvalidDelimiterError(StreamStatsError):
     Наследуется от StreamStatsError
     '''
     pass
+
 
 class UnmatchedFormatsError(StreamStatsError):
     '''
