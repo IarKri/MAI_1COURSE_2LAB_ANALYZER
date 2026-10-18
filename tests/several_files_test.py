@@ -1,9 +1,8 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 from streamstats.analysis import Analyzer
-from streamstats.parsers import jsonl_parser
-from streamstats.parsers import csv_parser
+from streamstats.parsers import  csv_parser, jsonl_parser
 
 
 def test_several_files_analyzing(tmp_path):

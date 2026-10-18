@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 from streamstats.__main__ import main
-from streamstats.errors import InvalidEventError, CLIConfigError
+from streamstats.errors import  CLIConfigError, InvalidEventError
 
 
 def test_valid_cli_csv_no_output(capsys, tmp_path):

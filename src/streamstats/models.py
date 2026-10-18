@@ -4,7 +4,7 @@ from datetime import datetime
 from enum import StrEnum
 
 
-from .errors import InvalidEventError, InvalidTimestampError, CLIConfigError
+from .errors import  CLIConfigError, InvalidEventError, InvalidTimestampError
 
 
 @dataclass
@@ -89,7 +89,7 @@ class CustomArgumentParser(argparse.ArgumentParser):
     Класс кастомных ошибок для argparser
     '''
 
-    def error(self, error):
+    def error(self, message):
         '''
         Замена ошибки argparse на кастомную ошибку
 
@@ -100,4 +100,4 @@ class CustomArgumentParser(argparse.ArgumentParser):
             CLIConfigError: ошибка аргументов командной строки
 
         '''
-        raise CLIConfigError(error)
+        raise CLIConfigError(message)

@@ -1,6 +1,7 @@
+import json
 import pytest
 from pathlib import Path
-import json
+
 
 from streamstats.errors import InvalidEventError, InvalidTimestampError
 from streamstats.models import Level

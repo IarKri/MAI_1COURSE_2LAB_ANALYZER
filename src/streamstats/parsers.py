@@ -125,7 +125,8 @@ def csv_parser(INPUT, file_counter, skip_invalid):
                         message=row["message"]
                     )
 
-                except (ValueError, KeyError, TypeError, InvalidEventError, InvalidTimestampError) as error:
+                except (ValueError, KeyError, TypeError, InvalidEventError, InvalidTimestampError)\
+                        as error:
                     log_invalid(file_counter, line_counter, error)
                     continue
 
@@ -192,7 +193,7 @@ def jsonl_parser(INPUT, file_counter, skip_invalid):
 
                 except json.JSONDecodeError as error:
                     log_invalid(file_counter, line_counter,
-                                InvalidEventError(f"Not jsonl format line"))
+                                InvalidEventError(f"Not jsonl format line {error}"))
                     continue
                 try:
                     timestamp = datetime.fromisoformat(row["timestamp"])

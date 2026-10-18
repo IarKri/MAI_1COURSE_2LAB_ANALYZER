@@ -6,8 +6,8 @@ from .analysis import Analyzer
 from .errors import (
     CLIConfigError,
     StreamStatsError,
-    UnsupportedFormatError,
     UnmatchedFormatsError,
+    UnsupportedFormatError
 )
 from .models import CustomArgumentParser
 from .parsers import csv_parser, jsonl_parser

@@ -1,6 +1,6 @@
-Events_content = ["timestamp", "level", "source", "message"]
-Levels = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
-Statistics = {
+EVENTS_CONTENT = ["timestamp", "level", "source", "message"]
+LEVELS = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
+STATISTICS = {
     "total_events": 0,
     "events_by_level": {
         "DEBUG": 0,
