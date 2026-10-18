@@ -20,6 +20,7 @@ class Analyzer:
 
         last_timestamp: время самого позднего события
     '''
+
     def __init__(self):
         '''
         Инициализация атрибутов
@@ -31,7 +32,6 @@ class Analyzer:
         self.first_timestamp = None
         self.last_timestamp = None
 
-
     def add(self, event):
         '''
         Функция накопления статистики
@@ -41,18 +41,20 @@ class Analyzer:
         '''
         self.total_events += 1
 
-        #методом level присваевам строку в переменную level и ищем ключ в словаре для value+=1
+        # методом level присваевам строку в переменную level и ищем ключ в словаре для value+=1
         level = event.level
         self.events_by_level[level] = self.events_by_level.get(level, 0) + 1
 
         source = event.source
-        self.events_by_source[source] = self.events_by_source.get(source, 0) + 1
+        self.events_by_source[source] = self.events_by_source.get(
+            source, 0) + 1
 
-        #сбор топ-n источников error и critical
+        # сбор топ-n источников error и critical
         if event.level == Level.ERROR or event.level == Level.CRITICAL:
-            self.top_errors_sources[source] = self.top_errors_sources.get(source, 0) + 1
+            self.top_errors_sources[source] = self.top_errors_sources.get(
+                source, 0) + 1
 
-        #отбор последнего и первого события
+        # отбор последнего и первого события
         if self.first_timestamp is None:
             self.first_timestamp = event.timestamp
         if event.timestamp < self.first_timestamp:
@@ -63,14 +65,13 @@ class Analyzer:
         if event.timestamp > self.last_timestamp:
             self.last_timestamp = event.timestamp
 
-
     def build(self):
         '''
         Функция получения статистики
 
         Returns:
             Накопленная статистика
-        
+
         '''
         top_error_sources = sorted(
             self.events_by_source.items(),
@@ -84,7 +85,7 @@ class Analyzer:
             "events_by_level": self.events_by_level,
             "events_by_source": self.events_by_source,
             "top_error_sources": top_error_sources,
-            "first_timestamp": 
+            "first_timestamp":
                 self.first_timestamp.isoformat(),
             "last_timestamp":
                 self.last_timestamp.isoformat(),

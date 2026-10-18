@@ -28,7 +28,7 @@ class Event:
     source: str
     message: str
 
-    #обработка пустых полей
+    # обработка пустых полей
     def __post_init__(self):
         '''
         Постобработка события на валидность обязательных полей
@@ -66,7 +66,7 @@ class Level(StrEnum):
     ERROR = "ERROR"
     CRITICAL = "CRITICAL"
 
-    #обработка неизвестных уровней
+    # обработка неизвестных уровней
     @classmethod
     def _missing_(cls, value):
         '''
@@ -76,26 +76,28 @@ class Level(StrEnum):
             cls: данные класса Level
 
             value: ненайденное значение
-        
+
         Raises:
             InvalidEventError: Ошибка в анализируемом событии
-        
+
         '''
         raise InvalidEventError(f"Unknown level: {value!r}")
+
 
 class CustomArgumentParser(argparse.ArgumentParser):
     '''
     Класс кастомных ошибок для argparser
     '''
+
     def error(self, error):
         '''
         Замена ошибки argparse на кастомную ошибку
 
         Args:
             error: информация об ошибке argparse
-        
+
         Raises:
             CLIConfigError: ошибка аргументов командной строки
-        
+
         '''
         raise CLIConfigError(error)
