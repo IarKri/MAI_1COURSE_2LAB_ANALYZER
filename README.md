@@ -72,6 +72,7 @@ python -m streamstats analyze INPUT --format csv|jsonl --skip-invalid
 
 ## Структура проекта
 
+```bash
 lab_02_analyzer\
     reports\
     src\
@@ -99,6 +100,7 @@ lab_02_analyzer\
         data_for_unicode-test.jsonl
     pyproject.toml
     README.md
+```
 
 
 ## Установка и создание виртуального окружения
