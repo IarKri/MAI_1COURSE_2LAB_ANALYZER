@@ -9,11 +9,11 @@ def test_several_files_analyzing():
 
     analyzer=Analyzer()
 
-    file_jsonl = Path("tests_data/data_for_tests.jsonl")
+    file_jsonl = Path("tests_valid_data/data_for_valid_tests.jsonl")
     for event in jsonl_parser(file_jsonl, None, 0):
         analyzer.add(event)
 
-    file_csv=Path("tests_data/data_for_tests.csv")
+    file_csv=Path("tests_valid_data/data_for_valid_tests.csv")
 
     for event in csv_parser(file_csv, None, 0):
         analyzer.add(event)

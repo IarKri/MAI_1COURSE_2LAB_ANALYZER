@@ -91,13 +91,7 @@ lab_02_analyzer\
         test_cli.py
         test_empty_files.py
         unit_test.py
-    tests_data\
-        data_for_tests.csv
-        data_for_tests.jsonl
-        empty_file_for_tests.csv
-        empty_file_for_tests.jsonl
-        skip_invalid_test_large.csv
-        skip_invalid_test_large.jsonl
+
 
 
 ## Установка и создание виртуального окружения

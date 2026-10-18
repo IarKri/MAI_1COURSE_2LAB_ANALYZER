@@ -5,45 +5,36 @@
       "title": "to do",
       "cards": [
         {
-          "id": "4944ce20-3369-4176-b717-eb21cc3a6a53",
+          "id": "fa4972cc-84c4-4358-b0de-55c288284404",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "README review",
+          "title": "clean reports folder",
           "description": "",
           "labels": [],
           "checkboxes": [],
           "comments": []
         },
         {
-          "id": "bb61bc96-2105-4879-9fb6-772f984518b2",
+          "id": "8bea1936-0809-48a4-b85d-68834f2e4f24",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "toml review",
+          "title": "report in csv format",
           "description": "",
           "labels": [],
           "checkboxes": [],
           "comments": []
         },
         {
-          "id": "80bf2fe4-c66a-43f6-b4d5-0970302bc320",
+          "id": "c654a437-1213-410a-9a2f-312d03d48ca7",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "error too much formats",
+          "title": "invalid delimiter",
           "description": "",
           "labels": [],
           "checkboxes": [],
           "comments": []
         },
         {
-          "id": "c5df7949-9a6c-4c18-87c0-68c658061f9a",
+          "id": "3a9934a4-08ae-43e7-99ae-a472c86f134f",
           "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": "constants.py",
-          "description": "",
-          "labels": [],
-          "checkboxes": [],
-          "comments": []
-        },
-        {
-          "id": "7f82a735-b113-4c2e-8b9a-dcd6a9ca6ff4",
-          "listId": "d93f600c-6c3d-4d63-bb04-87892f25870f",
-          "title": ".gitignore",
+          "title": "tmp_path",
           "description": "",
           "labels": [],
           "checkboxes": [],
@@ -56,9 +47,18 @@
       "title": "in process",
       "cards": [
         {
-          "id": "9ee10528-e442-4141-a6f0-b4833efa3124",
+          "id": "bb61bc96-2105-4879-9fb6-772f984518b2",
           "listId": "78c682aa-22e0-4d9a-83a2-bf9c23432d8a",
-          "title": "tests",
+          "title": "toml review",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "4944ce20-3369-4176-b717-eb21cc3a6a53",
+          "listId": "78c682aa-22e0-4d9a-83a2-bf9c23432d8a",
+          "title": "README review",
           "description": "",
           "labels": [],
           "checkboxes": [],
@@ -71,9 +71,63 @@
       "title": "Done",
       "cards": [
         {
+          "id": "80bf2fe4-c66a-43f6-b4d5-0970302bc320",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "error too much formats",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "c5df7949-9a6c-4c18-87c0-68c658061f9a",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "constants.py",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "7f82a735-b113-4c2e-8b9a-dcd6a9ca6ff4",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": ".gitignore",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "f11fa67b-1e61-4bdd-90a6-5e2710e0f940",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "break argparse",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "9ee10528-e442-4141-a6f0-b4833efa3124",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "tests",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
           "id": "6bd56534-ce31-4456-b9fd-6eda38195b7d",
           "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
           "title": "delete tests_events",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "8e7627eb-a06c-4ef1-b04a-1f01eebd5fe4",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "add cli configs error",
           "description": "",
           "labels": [],
           "checkboxes": [],
@@ -101,6 +155,15 @@
           "id": "ca52f196-0441-41ae-8006-7d02091e2812",
           "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
           "title": "class/function to make many files in one argument",
+          "description": "",
+          "labels": [],
+          "checkboxes": [],
+          "comments": []
+        },
+        {
+          "id": "7c8d2cd3-e761-4f3a-9f9c-27e47447a1e7",
+          "listId": "c6d92894-3f47-4889-bf86-c3fc4bbc0a87",
+          "title": "doc-strings",
           "description": "",
           "labels": [],
           "checkboxes": [],

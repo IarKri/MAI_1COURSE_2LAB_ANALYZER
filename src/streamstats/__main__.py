@@ -2,8 +2,12 @@ import argparse
 import sys
 
 
+from .models import CustomArgumentParser
+
+
 from .analysis import Analyzer
 from .errors import (
+    CLIConfigError,
     StreamStatsError,
     UnsupportedFormatError,
     UnmatchedFormatsError,
@@ -23,7 +27,7 @@ def parser(argv=None):
         argparse.Namespace: объект с указанными полями 
     '''
     format = argparse.RawTextHelpFormatter
-    parser = argparse.ArgumentParser(
+    parser = CustomArgumentParser(
         prog="streamstats",
         description=(
             "Files analyzer\n"
@@ -41,7 +45,8 @@ def parser(argv=None):
     subparser = parser.add_subparsers(
         dest="command",
         required=True,
-        title="Set of commands"
+        title="Set of commands",
+        parser_class=CustomArgumentParser
     )
 
     analyzer = subparser.add_parser(
@@ -64,6 +69,7 @@ def parser(argv=None):
     analyzer.add_argument(
         "--format",
         dest="file_format",
+        required=True,
         nargs='+',
         help="file format (supproting only .csv and .json files)"
     )
@@ -95,7 +101,10 @@ def main(argv=None):
         argv: Аргументы, подающиеся на вход
     """
     counter=-1
-    args = parser(argv)
+    try:
+        args = parser(argv)
+    except CLIConfigError as error:
+        raise CLIConfigError(f"{error}")
     analyzer = Analyzer()
     if args.command == "analyze":
         counter+=1
@@ -110,7 +119,8 @@ def main(argv=None):
             elif file.endswith(".csv") and args.file_format[counter]=="csv":
                 for event in csv_parser(file, counter+1, args.skip_invalid):
                     analyzer.add(event)
-
+            elif len(args.INPUT) < len(args.file_format):
+                raise UnmatchedFormatsError("Number of --format arguments are bigger than number of files")
             else:
                 raise UnmatchedFormatsError("File format and --format argument doesn't match")
                 #проверить правильный ли вывод ошибки
@@ -125,3 +135,5 @@ if __name__ == "__main__":
     except StreamStatsError as error:
         print(f"{type(error).__name__}: {error}", file=sys.stderr)
         sys.exit(2)
+    except Exception as error:
+        print
