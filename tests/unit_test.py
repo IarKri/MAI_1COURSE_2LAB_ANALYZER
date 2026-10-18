@@ -13,7 +13,6 @@ def test_jsonl_parser_valid(tmp_path):
     file.write_text(json.dumps({"timestamp": "2026-10-13T12:00:00", "level": "INFO", "source": "api", "message": "Сервис запущен"},
                                ensure_ascii=False), encoding="utf-8")
 
-    # делаем list, потому что через for event in csv_parser(file) потребуется .add (а тест только для парсера)
     event = list(jsonl_parser(file, None, 0))
 
     assert len(event) == 1
