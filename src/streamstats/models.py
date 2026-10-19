@@ -39,8 +39,8 @@ class Event:
             raise InvalidEventError("No information in level")
         if not isinstance(self.source, str) or not self.source.strip():
             raise InvalidEventError("No information in source")
-        if not isinstance(self.message, str) or not self.message.strip():
-            raise InvalidEventError("No infromation in message")
+        if not isinstance(self.message, str):
+            raise InvalidEventError("Not valid message")
 
 
 class Level(StrEnum):

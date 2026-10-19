@@ -76,9 +76,9 @@ def parser(argv=None):
         "--output",
         dest="output_file",
         help=(
-            "puts report in your custom file\n",
-            "not required function\n",
-            "without --output result will be printed in terminal\n",
+            "puts report in your custom file\n"
+            "not required function\n"
+            "without --output result will be printed in terminal\n"
         )
     )
 

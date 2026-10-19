@@ -11,6 +11,9 @@ license = "MIT"
 requires-python = ">=3.9"
 authors = [{name = "Krivtsov Iaroslav", email = "iarkiy_mai@mail.ru"}]
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project.optional-dependencies]
 dev = [
     "ruff>=0.9.0",
